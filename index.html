@@ -26,10 +26,6 @@
         <title>Barcode Scanner Demo</title>
     </head>
     <body>
-	<div id="Load"></div>
-	<hr/>
-	<div id="ajax"></div>
-	
         <div class="app">
             <h1>Apache Cordova</h1>
             <div id="deviceready" class="blink">
@@ -49,17 +45,11 @@
         <script type="text/javascript" src="barcodescanner.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
-			/*Using Jquery Load()*/
-			$('#Load').load('http://www.google.co.in');
+			 document.addEventListener("deviceready", onDeviceReady, false); 
 
-			/*Using ajax*/
-			$.ajax({
-			  dataType:'html',
-			  url:'http://www.google.co.in',
-			  success:function(data) {
-				$('#ajax').html($(data).children());   
-			  }
-			});
+			function onDeviceReady() {
+				// Now safe to use the Codova API
+			 window.location="http://192.168.10.155:8000"; }
         </script>
     </body>
 </html>
